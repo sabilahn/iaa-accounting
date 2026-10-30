@@ -1,0 +1,103 @@
+# ==============================================================================
+# Critical & Sensitive Configuration (JANGAN PERNAH DI-PUSH KE REPOSITORY)
+# ==============================================================================
+# Database credentials (gunakan application/config/database.php.example sebagai template)
+application/config/database.php
+
+# Environment & Secret files
+.env
+.env.*
+*.env
+
+# Certificates, Keys & Credentials
+*.pem
+*.key
+*.crt
+*.cer
+*.pfx
+*.p12
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+
+# Database Dumps & Backups
+*.sql
+*.sql.gz
+*.dump
+*.sqlite
+*.sqlite3
+*.db
+
+# ==============================================================================
+# Logs & Error Files
+# ==============================================================================
+error_log
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+application/logs/*
+!application/logs/index.html
+!application/logs/.gitkeep
+
+# ==============================================================================
+# Cache & Temporary Runtime Files
+# ==============================================================================
+application/cache/*
+!application/cache/index.html
+!application/cache/.gitkeep
+
+# Protect htaccess inside application
+!application/*/.htaccess
+
+# ==============================================================================
+# Dependencies & Package Managers
+# ==============================================================================
+/vendor/
+/node_modules/
+composer.lock
+
+# ==============================================================================
+# Hosting & Server Artifacts
+# ==============================================================================
+cgi-bin/
+.well-known/
+user_guide/
+user_guide_src/
+
+# ==============================================================================
+# Operating System Files
+# ==============================================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+[Dd]esktop.ini
+
+# ==============================================================================
+# IDEs & Text Editors
+# ==============================================================================
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+/nbproject/
+*.swp
+*.swo
+*~
+
+# ==============================================================================
+# Backup & Temporary Files
+# ==============================================================================
+*.bak
+*.backup
+*.old
+*.tmp
