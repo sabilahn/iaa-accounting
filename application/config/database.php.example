@@ -14,25 +14,56 @@ defined('BASEPATH') or exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 
+// Ubah sesuai identitas unik masing-masing project
+$project_key = 'iaa-accounting';
+
+$possible_env_paths = array(
+	// 1. Jika project berada di dalam subfolder public_html/<project> -> naik 2 level ke /home/username/.env_config/
+	dirname(FCPATH, 2) . DIRECTORY_SEPARATOR . '.env_config' . DIRECTORY_SEPARATOR . $project_key . '.php',
+
+	// 2. Jika project berada langsung di root public_html -> naik 1 level ke /home/username/.env_config/
+	dirname(FCPATH, 1) . DIRECTORY_SEPARATOR . '.env_config' . DIRECTORY_SEPARATOR . $project_key . '.php',
+
+	// 3. Fallback menggunakan variabel HOME di cPanel (/home/username/.env_config/...)
+	( ! empty($_SERVER['HOME']) ? rtrim($_SERVER['HOME'], '/\\') . DIRECTORY_SEPARATOR . '.env_config' . DIRECTORY_SEPARATOR . $project_key . '.php' : ''),
+
+	// 4. Fallback di dalam folder project sendiri (untuk development lokal XAMPP)
+	FCPATH . '.env.php',
+);
+
+$env_db = array();
+foreach ($possible_env_paths as $env_path)
+{
+	if ($env_path !== '' && is_file($env_path) && is_readable($env_path))
+	{
+		$loaded_env = include $env_path;
+		if (is_array($loaded_env))
+		{
+			$env_db = $loaded_env;
+			break;
+		}
+	}
+}
+
 $db['default'] = array(
-	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'dharmaia_accounting',
-	'dbdriver' => 'mysqli',
-	'dbprefix' => '',
-	'pconnect' => FALSE,
-	'db_debug' => (ENVIRONMENT !== 'production'),
-	'cache_on' => FALSE,
-	'cachedir' => '',
-	'char_set' => 'utf8',
-	'dbcollat' => 'utf8_general_ci',
-	'swap_pre' => '',
-	'encrypt' => FALSE,
-	'compress' => FALSE,
-	'stricton' => FALSE,
-	'failover' => array(),
+	'dsn'          => isset($env_db['DB_DSN']) ? $env_db['DB_DSN'] : '',
+	'hostname'     => isset($env_db['DB_HOST']) ? $env_db['DB_HOST'] : 'localhost',
+	'username'     => isset($env_db['DB_USER']) ? $env_db['DB_USER'] : '',
+	'password'     => isset($env_db['DB_PASS']) ? $env_db['DB_PASS'] : '',
+	'database'     => isset($env_db['DB_NAME']) ? $env_db['DB_NAME'] : '',
+	'dbdriver'     => isset($env_db['DB_DRIVER']) ? $env_db['DB_DRIVER'] : 'mysqli',
+	'dbprefix'     => '',
+	'pconnect'     => FALSE,
+	'db_debug'     => (ENVIRONMENT !== 'production'),
+	'cache_on'     => FALSE,
+	'cachedir'     => '',
+	'char_set'     => 'utf8',
+	'dbcollat'     => 'utf8_general_ci',
+	'swap_pre'     => '',
+	'encrypt'      => FALSE,
+	'compress'     => FALSE,
+	'stricton'     => FALSE,
+	'failover'     => array(),
 	'save_queries' => TRUE
 );
 

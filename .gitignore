@@ -7,6 +7,9 @@ application/config/database.php
 # Environment & Secret files
 .env
 .env.*
+.env.php
+.env_config/
+!.env.php.example
 *.env
 
 # Certificates, Keys & Credentials
