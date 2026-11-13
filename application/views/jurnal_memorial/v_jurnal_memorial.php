@@ -20,14 +20,14 @@
                     <tr>
                         <td class="tengah"><?= $jurnal['kode'] ?></td>
                         <td><?= $jurnal['nama'] ?></td>
-                        <td class="kanan"><?= number_format($jurnal['debet'], 2, ',', '.'); ?></td>
+                        <td class="kanan"><?= number_format((float) ($jurnal['debet'] ?? 0), 2, ',', '.'); ?></td>
                     </tr>
                 <?php } ?>
 
                 <tr class="biru">
                     <td></td>
                     <td><b>JUMLAH</b></td>
-                    <td class="kanan"><b><?= number_format($jml_debet, 2, ',', '.'); ?></b></td>
+                    <td class="kanan"><b><?= number_format((float) ($jml_debet ?? 0), 2, ',', '.'); ?></b></td>
                 </tr>
             </tbody>
         </table>
@@ -50,14 +50,14 @@
                     <tr>
                         <td class="tengah"><?= $jurnal['kode'] ?></td>
                         <td><?= $jurnal['nama'] ?></td>
-                        <td class="kanan"><?= number_format($jurnal['kredit'], 2, ',', '.'); ?></td>
+                        <td class="kanan"><?= number_format((float) ($jurnal['kredit'] ?? 0), 2, ',', '.'); ?></td>
                     </tr>
                 <?php } ?>
 
                 <tr class="biru">
                     <td></td>
                     <td><b>JUMLAH</b></td>
-                    <td class="kanan"><b><?= number_format($jml_kredit, 2, ',', '.'); ?></b></td>
+                    <td class="kanan"><b><?= number_format((float) ($jml_kredit ?? 0), 2, ',', '.'); ?></b></td>
                 </tr>
             </tbody>
         </table>

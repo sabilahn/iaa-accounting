@@ -131,11 +131,11 @@
                                             <tr>
                                                 <td class="text-center"><?= $penyesuaian['kode'] ?></td>
                                                 <td><?= $penyesuaian['nama'] ?></td>
-                                                <td class="text-right"><?= number_format($penyesuaian['saldo_awal'], 2, ',', '.'); ?></td>
+                                                <td class="text-right"><?= number_format((float) ($penyesuaian['saldo_awal'] ?? 0), 2, ',', '.'); ?></td>
                                                 <td style="background-color:#fdeec5;"></td>
-                                                <td class="text-right"><?= number_format($penyesuaian['penyesuaian_debet'], 2, ',', '.'); ?></td>
-                                                <td class="text-right"><?= number_format($penyesuaian['penyesuaian_kredit'], 2, ',', '.'); ?></td>
-                                                <td class="text-right"><?= number_format($penyesuaian['saldo_akhir'], 2, ',', '.'); ?></td>
+                                                <td class="text-right"><?= number_format((float) ($penyesuaian['penyesuaian_debet'] ?? 0), 2, ',', '.'); ?></td>
+                                                <td class="text-right"><?= number_format((float) ($penyesuaian['penyesuaian_kredit'] ?? 0), 2, ',', '.'); ?></td>
+                                                <td class="text-right"><?= number_format((float) ($penyesuaian['saldo_akhir'] ?? 0), 2, ',', '.'); ?></td>
                                                 <td style="background-color:#fdeec5;"></td>
                                                 <td><button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#editModal<?= $penyesuaian['kode'] ?>"><i class="fas fa-pencil-alt"></i></button></td>
                                                 <!-- <td><button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#editModal<?= $penyesuaian['kode'].'|'. $penyesuaian['bulan'].'|'. $penyesuaian['tahun'] ?>"><i class="fas fa-pencil-alt"></i></button></td> -->
@@ -146,11 +146,11 @@
                                                 <td class="text-center"><?= $penyesuaian['kode'] ?></td>
                                                 <td><?= $penyesuaian['nama'] ?></td>
                                                 <td style="background-color:#fdeec5;"></td>
-                                                <td class="text-right"><?= number_format($penyesuaian['saldo_awal'], 2, ',', '.'); ?></td>
-                                                <td class="text-right"><?= number_format($penyesuaian['penyesuaian_debet'], 2, ',', '.'); ?></td>
-                                                <td class="text-right"><?= number_format($penyesuaian['penyesuaian_kredit'], 2, ',', '.'); ?></td>
+                                                <td class="text-right"><?= number_format((float) ($penyesuaian['saldo_awal'] ?? 0), 2, ',', '.'); ?></td>
+                                                <td class="text-right"><?= number_format((float) ($penyesuaian['penyesuaian_debet'] ?? 0), 2, ',', '.'); ?></td>
+                                                <td class="text-right"><?= number_format((float) ($penyesuaian['penyesuaian_kredit'] ?? 0), 2, ',', '.'); ?></td>
                                                 <td style="background-color:#fdeec5;"></td>
-                                                <td class="text-right"><?= number_format($penyesuaian['saldo_akhir'], 2, ',', '.'); ?></td>
+                                                <td class="text-right"><?= number_format((float) ($penyesuaian['saldo_akhir'] ?? 0), 2, ',', '.'); ?></td>
                                                 <td><button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#editModal<?= $penyesuaian['kode'] ?>"><i class="fas fa-pencil-alt"></i></button></td>
                                             </tr>
                                         <?php }

@@ -4,7 +4,7 @@
 	"type": "project",
 	"license": "MIT",
 	"require": {
-		"php": ">=5.3.7",
-		"dompdf/dompdf": "^1.0"
+		"php": ">=8.3",
+		"dompdf/dompdf": "^3.0"
 	}
 }

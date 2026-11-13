@@ -129,11 +129,11 @@
                                             <tr>
                                                 <td class="text-center"><?= $mutasi['kode'] ?></td>
                                                 <td><?= $mutasi['nama'] ?></td>
-                                                <td class="text-right"><?= number_format($mutasi['saldo_awal'], 2, ',', '.'); ?></td>
+                                                <td class="text-right"><?= number_format((float) ($mutasi['saldo_awal'] ?? 0), 2, ',', '.'); ?></td>
                                                 <td style="background-color:#fdeec5;"></td>
-                                                <td class="text-right"><?= number_format($mutasi['mutasi_debet'], 2, ',', '.'); ?></td>
-                                                <td class="text-right"><?= number_format($mutasi['mutasi_kredit'], 2, ',', '.'); ?></td>
-                                                <td class="text-right"><?= number_format($mutasi['saldo_akhir'], 2, ',', '.'); ?></td>
+                                                <td class="text-right"><?= number_format((float) ($mutasi['mutasi_debet'] ?? 0), 2, ',', '.'); ?></td>
+                                                <td class="text-right"><?= number_format((float) ($mutasi['mutasi_kredit'] ?? 0), 2, ',', '.'); ?></td>
+                                                <td class="text-right"><?= number_format((float) ($mutasi['saldo_akhir'] ?? 0), 2, ',', '.'); ?></td>
                                                 <td style="background-color:#fdeec5;"></td>
                                             </tr>
                                         <?php
@@ -142,11 +142,11 @@
                                                 <td class="text-center"><?= $mutasi['kode'] ?></td>
                                                 <td><?= $mutasi['nama'] ?></td>
                                                 <td style="background-color:#fdeec5;"></td>
-                                                <td class="text-right"><?= number_format($mutasi['saldo_awal'], 2, ',', '.'); ?></td>
-                                                <td class="text-right"><?= number_format($mutasi['mutasi_debet'], 2, ',', '.'); ?></td>
-                                                <td class="text-right"><?= number_format($mutasi['mutasi_kredit'], 2, ',', '.'); ?></td>
+                                                <td class="text-right"><?= number_format((float) ($mutasi['saldo_awal'] ?? 0), 2, ',', '.'); ?></td>
+                                                <td class="text-right"><?= number_format((float) ($mutasi['mutasi_debet'] ?? 0), 2, ',', '.'); ?></td>
+                                                <td class="text-right"><?= number_format((float) ($mutasi['mutasi_kredit'] ?? 0), 2, ',', '.'); ?></td>
                                                 <td style="background-color:#fdeec5;"></td>
-                                                <td class="text-right"><?= number_format($mutasi['saldo_akhir'], 2, ',', '.'); ?></td>
+                                                <td class="text-right"><?= number_format((float) ($mutasi['saldo_akhir'] ?? 0), 2, ',', '.'); ?></td>
                                             </tr>
                                         <?php }
                                     } else { ?>

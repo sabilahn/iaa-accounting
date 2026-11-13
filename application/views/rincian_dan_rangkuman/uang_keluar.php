@@ -54,7 +54,7 @@
                                             <td class="text-center"><?= $uang_keluar['kode'] ?></td>
                                             <td><?= $uang_keluar['nama'] ?></td>
                                             <td><?= $uang_keluar['uraian'] ?></td>
-                                            <td class="text-right"><?= number_format($uang_keluar['jumlah'], 2, ',', '.'); ?></td>
+                                            <td class="text-right"><?= number_format((float) ($uang_keluar['jumlah'] ?? 0), 2, ',', '.'); ?></td>
                                             <td class="text-center"><?= $uang_keluar['action'] ?></td>
                                         </tr>
                                     <?php

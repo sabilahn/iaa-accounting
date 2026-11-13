@@ -23,7 +23,7 @@
                     <tr>
                         <td class="tengah"><?= $rugi_laba['kode'] ?></td>
                         <td><?= $rugi_laba['nama'] ?></td>
-                        <td class="kanan"><?= number_format($rugi_laba['mutasi_kredit'], 2, ',', '.'); ?></td>
+                        <td class="kanan"><?= number_format((float) ($rugi_laba['mutasi_kredit'] ?? 0), 2, ',', '.'); ?></td>
                     </tr>
             <?php
                 }
@@ -32,7 +32,7 @@
             <tr class="biru">
                 <td></td>
                 <td>Pendapatan</td>
-                <td class="kanan"><?= number_format($pendapatan, 2, ',', '.'); ?></td>
+                <td class="kanan"><?= number_format((float) ($pendapatan ?? 0), 2, ',', '.'); ?></td>
             </tr>
             <?php
             foreach ($data_rugi_laba as $rugi_laba) {
@@ -40,7 +40,7 @@
                     <tr>
                         <td class="tengah"><?= $rugi_laba['kode'] ?></td>
                         <td><?= $rugi_laba['nama'] ?></td>
-                        <td class="kanan"><?= number_format($rugi_laba['mutasi_debet'], 2, ',', '.'); ?></td>
+                        <td class="kanan"><?= number_format((float) ($rugi_laba['mutasi_debet'] ?? 0), 2, ',', '.'); ?></td>
                     </tr>
             <?php
                 }
@@ -49,27 +49,27 @@
             <tr class="biru">
                 <td></td>
                 <td>Biaya</td>
-                <td class="kanan"><?= number_format($biaya, 2, ',', '.'); ?></td>
+                <td class="kanan"><?= number_format((float) ($biaya ?? 0), 2, ',', '.'); ?></td>
             </tr>
             <tr>
                 <td></td>
                 <td>Laba Sebelum Pajak</td>
-                <td class="kanan"><?= number_format($laba_blm_pajak, 2, ',', '.'); ?></td>
+                <td class="kanan"><?= number_format((float) ($laba_blm_pajak ?? 0), 2, ',', '.'); ?></td>
             </tr>
             <tr>
                 <td></td>
                 <td>Pajak</td>
-                <td class="kanan"><?= number_format($pajak, 2, ',', '.'); ?></td>
+                <td class="kanan"><?= number_format((float) ($pajak ?? 0), 2, ',', '.'); ?></td>
             </tr>
             <tr>
                 <td></td>
                 <td>Laba Sesudah Pajak</td>
-                <td class="kanan"><?= number_format($laba_sdh_pajak, 2, ',', '.'); ?></td>
+                <td class="kanan"><?= number_format((float) ($laba_sdh_pajak ?? 0), 2, ',', '.'); ?></td>
             </tr>
             <tr>
                 <td></td>
                 <td>Laba Bersih</td>
-                <td class="kanan"><?= number_format($laba_sdh_pajak, 2, ',', '.'); ?></td>
+                <td class="kanan"><?= number_format((float) ($laba_sdh_pajak ?? 0), 2, ',', '.'); ?></td>
             </tr>
         <?php
         } ?>

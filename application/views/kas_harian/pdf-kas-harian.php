@@ -148,7 +148,7 @@
                 <td><b>Saldo Awal</b></td>
                 <td></td>
                 <td></td>
-                <td class="kanan"><b><?= number_format($saldo_awal, 2, ',', '.') ?></b></td>
+                <td class="kanan"><b><?= number_format((float) ($saldo_awal ?? 0), 2, ',', '.') ?></b></td>
             </tr>
             <?php
 
@@ -160,17 +160,17 @@
                     <td><?= $kas[2] ?></td>
                     <?php
                     if ($kas[3] != '-') {
-                        echo '<td  class="kanan">' . number_format($kas[3], 2, ',', '.') . '</td>';
+                        echo '<td  class="kanan">' . number_format((float) ($kas[3] ?? 0), 2, ',', '.') . '</td>';
                     } else {
                         echo '<td></td>';
                     }
 
                     if ($kas[4] != '-') {
-                        echo '<td  class="kanan">' . number_format($kas[4], 2, ',', '.') . '</td>';
+                        echo '<td  class="kanan">' . number_format((float) ($kas[4] ?? 0), 2, ',', '.') . '</td>';
                     } else {
                         echo '<td></td>';
                     } ?>
-                    <td class="kanan"><?= number_format($kas[5], 2, ',', '.'); ?></td>
+                    <td class="kanan"><?= number_format((float) ($kas[5] ?? 0), 2, ',', '.'); ?></td>
                 </tr>
             <?php
             } ?>

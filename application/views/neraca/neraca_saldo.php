@@ -140,14 +140,14 @@
                                                 <tr>
                                                     <td class="text-center"><?= $saldo['kode'] ?></td>
                                                     <td><?= $saldo['nama'] ?></td>
-                                                    <td class="text-right"><?= number_format($saldo['saldo_awal'], 2, ',', '.'); ?></td>
+                                                    <td class="text-right"><?= number_format((float) ($saldo['saldo_awal'] ?? 0), 2, ',', '.'); ?></td>
                                                     <td style="background-color:#fdeec5;"></td>
-                                                    <!--<td class="text-right"><?= number_format($saldo['debet'], 2, ',', '.'); ?></td>-->
-                                                    <!--<td class="text-right"><?= number_format($saldo['kredit'], 2, ',', '.'); ?></td>-->
-                                                    <!--<td class="text-right"><?= number_format($saldo['saldo_akhir'], 2, ',', '.'); ?></td>-->
+                                                    <!--<td class="text-right"><?= number_format((float) ($saldo['debet'] ?? 0), 2, ',', '.'); ?></td>-->
+                                                    <!--<td class="text-right"><?= number_format((float) ($saldo['kredit'] ?? 0), 2, ',', '.'); ?></td>-->
+                                                    <!--<td class="text-right"><?= number_format((float) ($saldo['saldo_akhir'] ?? 0), 2, ',', '.'); ?></td>-->
                                                     <td class="text-right"><?= number_format(0, 2, ',', '.'); ?></td>
                                                     <td class="text-right"><?= number_format(0, 2, ',', '.'); ?></td>
-                                                    <td class="text-right"><?= number_format($saldo['saldo_awal'], 2, ',', '.'); ?></td>
+                                                    <td class="text-right"><?= number_format((float) ($saldo['saldo_awal'] ?? 0), 2, ',', '.'); ?></td>
                                                     <td style="background-color:#fdeec5;"></td>
                                                 </tr>
                                             <?php
@@ -156,14 +156,14 @@
                                                     <td class="text-center"><?= $saldo['kode'] ?></td>
                                                     <td><?= $saldo['nama'] ?></td>
                                                     <td style="background-color:#fdeec5;"></td>
-                                                    <td class="text-right"><?= number_format($saldo['saldo_awal'], 2, ',', '.'); ?></td>
-                                                    <!--<td class="text-right"><?= number_format($saldo['debet'], 2, ',', '.'); ?></td>-->
-                                                    <!--<td class="text-right"><?= number_format($saldo['kredit'], 2, ',', '.'); ?></td>-->
+                                                    <td class="text-right"><?= number_format((float) ($saldo['saldo_awal'] ?? 0), 2, ',', '.'); ?></td>
+                                                    <!--<td class="text-right"><?= number_format((float) ($saldo['debet'] ?? 0), 2, ',', '.'); ?></td>-->
+                                                    <!--<td class="text-right"><?= number_format((float) ($saldo['kredit'] ?? 0), 2, ',', '.'); ?></td>-->
                                                     <td class="text-right"><?= number_format(0, 2, ',', '.'); ?></td>
                                                     <td class="text-right"><?= number_format(0, 2, ',', '.'); ?></td>
                                                     <td style="background-color:#fdeec5;"></td>
-                                                    <!--<td class="text-right"><?= number_format($saldo['saldo_akhir'], 2, ',', '.'); ?></td>-->
-                                                    <td class="text-right"><?= number_format($saldo['saldo_awal'], 2, ',', '.'); ?></td>
+                                                    <!--<td class="text-right"><?= number_format((float) ($saldo['saldo_akhir'] ?? 0), 2, ',', '.'); ?></td>-->
+                                                    <td class="text-right"><?= number_format((float) ($saldo['saldo_awal'] ?? 0), 2, ',', '.'); ?></td>
                                                 </tr>
                                             <?php }
                                         } else {
@@ -173,12 +173,12 @@
                                                 <td class="text-center"><?= $saldo['kode'] ?></td>
                                                 <td><?= $saldo['nama'] ?></td>
                                                 <td style="background-color:#fdeec5;"></td>
-                                                <td class="text-right"><?= number_format($saldo['saldo_awal'], 2, ',', '.'); ?></td>
-                                                <td class="text-right"><?= number_format($saldo['debet'], 2, ',', '.'); ?></td>
-                                                <!-- <td class="kanan"><?= number_format($saldo['kredit'], 2, ',', '.'); ?></td> -->
-                                                <td class="text-right"><?= number_format($laba_sdh_pajak, 2, ',', '.'); ?></td>
+                                                <td class="text-right"><?= number_format((float) ($saldo['saldo_awal'] ?? 0), 2, ',', '.'); ?></td>
+                                                <td class="text-right"><?= number_format((float) ($saldo['debet'] ?? 0), 2, ',', '.'); ?></td>
+                                                <!-- <td class="kanan"><?= number_format((float) ($saldo['kredit'] ?? 0), 2, ',', '.'); ?></td> -->
+                                                <td class="text-right"><?= number_format((float) ($laba_sdh_pajak ?? 0), 2, ',', '.'); ?></td>
                                                 <td style="background-color:#fdeec5;"></td>
-                                                <td class="text-right"><?= number_format($saldo_shu, 2, ',', '.'); ?></td>
+                                                <td class="text-right"><?= number_format((float) ($saldo_shu ?? 0), 2, ',', '.'); ?></td>
                                             </tr>
                                 <?php
                                         }

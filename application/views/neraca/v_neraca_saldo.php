@@ -64,11 +64,11 @@
                                 <tr>
                                     <td class="tengah"><?= $mutasi['kode'] ?></td>
                                     <td><?= $mutasi['nama'] ?></td>
-                                    <td class="kanan"><?= number_format($mutasi['saldo_awal'], 2, ',', '.'); ?></td>
+                                    <td class="kanan"><?= number_format((float) ($mutasi['saldo_awal'] ?? 0), 2, ',', '.'); ?></td>
                                     <td class="blok2"></td>
                                     <td class="kanan"><?= number_format(0, 2, ',', '.'); ?></td>
                                     <td class="kanan"><?= number_format(0, 2, ',', '.'); ?></td>
-                                    <td class="kanan"><?= number_format($mutasi['saldo_awal'], 2, ',', '.'); ?></td>
+                                    <td class="kanan"><?= number_format((float) ($mutasi['saldo_awal'] ?? 0), 2, ',', '.'); ?></td>
                                     <td class="blok2"></td>
                                 </tr>
                             <?php
@@ -82,11 +82,11 @@
                                     <td class="tengah"><?= $mutasi['kode'] ?></td>
                                     <td><?= $mutasi['nama'] ?></td>
                                     <td class="blok2"></td>
-                                    <td class="kanan"><?= number_format($mutasi['saldo_awal'], 2, ',', '.'); ?></td>
+                                    <td class="kanan"><?= number_format((float) ($mutasi['saldo_awal'] ?? 0), 2, ',', '.'); ?></td>
                                     <td class="kanan"><?= number_format(0, 2, ',', '.'); ?></td>
                                     <td class="kanan"><?= number_format(0, 2, ',', '.'); ?></td>
                                     <td class="blok2"></td>
-                                    <td class="kanan"><?= number_format($mutasi['saldo_awal'], 2, ',', '.'); ?></td>
+                                    <td class="kanan"><?= number_format((float) ($mutasi['saldo_awal'] ?? 0), 2, ',', '.'); ?></td>
                                 </tr>
                             <?php
                             }
@@ -104,12 +104,12 @@
                                 <td class="tengah"><?= $mutasi['kode'] ?></td>
                                 <td><?= $mutasi['nama'] ?></td>
                                 <td class="blok2"></td>
-                                <td class="kanan"><?= number_format($shu_awal, 2, ',', '.'); ?></td>
-                                <td class="kanan"><?= number_format($mutasi['debet'], 2, ',', '.'); ?></td>
-                                <!-- <td class="kanan"><?= number_format($mutasi['kredit'], 2, ',', '.'); ?></td> -->
-                                <td class="kanan"><?= number_format($laba_sdh_pajak, 2, ',', '.'); ?></td>
+                                <td class="kanan"><?= number_format((float) ($shu_awal ?? 0), 2, ',', '.'); ?></td>
+                                <td class="kanan"><?= number_format((float) ($mutasi['debet'] ?? 0), 2, ',', '.'); ?></td>
+                                <!-- <td class="kanan"><?= number_format((float) ($mutasi['kredit'] ?? 0), 2, ',', '.'); ?></td> -->
+                                <td class="kanan"><?= number_format((float) ($laba_sdh_pajak ?? 0), 2, ',', '.'); ?></td>
                                 <td class="blok2"></td>
-                                <td class="kanan"><?= number_format($rugi_laba_akhir, 2, ',', '.'); ?></td>
+                                <td class="kanan"><?= number_format((float) ($rugi_laba_akhir ?? 0), 2, ',', '.'); ?></td>
                             </tr>
 
                         <?php
@@ -121,11 +121,11 @@
                         <tr class="biru">
                             <td></td>
                             <td><?= $jenis['nama'] ?></td>
-                            <td class="kanan"><?= number_format($jml_awal, 2, ',', '.'); ?></td>
+                            <td class="kanan"><?= number_format((float) ($jml_awal ?? 0), 2, ',', '.'); ?></td>
                             <td class="blok2"></td>
-                            <td class="kanan"><?= number_format($jml_debet, 2, ',', '.'); ?></td>
-                            <td class="kanan"><?= number_format($jml_kredit, 2, ',', '.'); ?></td>
-                            <td class="kanan"><?= number_format($jml_awal, 2, ',', '.'); ?></td>
+                            <td class="kanan"><?= number_format((float) ($jml_debet ?? 0), 2, ',', '.'); ?></td>
+                            <td class="kanan"><?= number_format((float) ($jml_kredit ?? 0), 2, ',', '.'); ?></td>
+                            <td class="kanan"><?= number_format((float) ($jml_awal ?? 0), 2, ',', '.'); ?></td>
                             <td class="blok2"></td>
                         </tr>
                     <?php } else { ?>
@@ -133,11 +133,11 @@
                             <td></td>
                             <td><?= $jenis['nama'] ?></td>
                             <td class="blok2"></td>
-                            <td class="kanan"><?= number_format($jml_awal, 2, ',', '.'); ?></td>
-                            <td class="kanan"><?= number_format($jml_debet, 2, ',', '.'); ?></td>
-                            <td class="kanan"><?= number_format($jml_kredit, 2, ',', '.'); ?></td>
+                            <td class="kanan"><?= number_format((float) ($jml_awal ?? 0), 2, ',', '.'); ?></td>
+                            <td class="kanan"><?= number_format((float) ($jml_debet ?? 0), 2, ',', '.'); ?></td>
+                            <td class="kanan"><?= number_format((float) ($jml_kredit ?? 0), 2, ',', '.'); ?></td>
                             <td class="blok2"></td>
-                            <td class="kanan"><?= number_format($jml_awal, 2, ',', '.'); ?></td>
+                            <td class="kanan"><?= number_format((float) ($jml_awal ?? 0), 2, ',', '.'); ?></td>
                         </tr>
                     <?php
                     }
@@ -155,13 +155,13 @@
                         <td></td>
                         <td><?= $jenis['nama'] ?></td>
                         <td class="blok2"></td>
-                        <td class="kanan"><?= number_format($jml_awal, 2, ',', '.'); ?></td>
-                        <td class="kanan"><?= number_format($jml_debet, 2, ',', '.'); ?></td>
-                        <td class="kanan"><?= number_format($jml_kredit_equitas, 2, ',', '.'); ?></td>
-                        <!-- <td class="kanan"><?= number_format($jml_kredit, 2, ',', '.'); ?></td> -->
+                        <td class="kanan"><?= number_format((float) ($jml_awal ?? 0), 2, ',', '.'); ?></td>
+                        <td class="kanan"><?= number_format((float) ($jml_debet ?? 0), 2, ',', '.'); ?></td>
+                        <td class="kanan"><?= number_format((float) ($jml_kredit_equitas ?? 0), 2, ',', '.'); ?></td>
+                        <!-- <td class="kanan"><?= number_format((float) ($jml_kredit ?? 0), 2, ',', '.'); ?></td> -->
                         <td class="blok2"></td>
-                        <td class="kanan"><?= number_format($jml_akhir_equitas, 2, ',', '.'); ?></td>
-                        <!-- <td class="kanan"><?= number_format($jml_awal, 2, ',', '.'); ?></td> -->
+                        <td class="kanan"><?= number_format((float) ($jml_akhir_equitas ?? 0), 2, ',', '.'); ?></td>
+                        <!-- <td class="kanan"><?= number_format((float) ($jml_awal ?? 0), 2, ',', '.'); ?></td> -->
                     </tr>
 
         <?php }
@@ -183,14 +183,14 @@
         <tr>
             <td></td>
             <td><b>TOTAL</b></td>
-            <td class="kanan"><b><?= number_format($total_awal_debet, 2, ',', '.'); ?></b></td>
-            <td class="kanan"><b><?= number_format($total_awal_kredit, 2, ',', '.'); ?></b></td>
-            <td class="kanan"><b><?= number_format($total_debet, 2, ',', '.'); ?></b></td>
-            <td class="kanan"><b><?= number_format($total_kredit, 2, ',', '.'); ?></b></td>
-            <!--<td class="kanan"><b><?= number_format($total_akhir_debet, 2, ',', '.'); ?></b></td>-->
-            <!--<td class="kanan"><b><?= number_format($total_akhir_kredit, 2, ',', '.'); ?></b></td>-->
-            <td class="kanan"><b><?= number_format($total_awal_debet-($total_debet * $modifier_debet), 2, ',', '.'); ?></b></td>
-            <td class="kanan"><b><?= number_format($total_awal_kredit-($total_kredit * $modifier_kredit), 2, ',', '.'); ?></b></td>
+            <td class="kanan"><b><?= number_format((float) ($total_awal_debet ?? 0), 2, ',', '.'); ?></b></td>
+            <td class="kanan"><b><?= number_format((float) ($total_awal_kredit ?? 0), 2, ',', '.'); ?></b></td>
+            <td class="kanan"><b><?= number_format((float) ($total_debet ?? 0), 2, ',', '.'); ?></b></td>
+            <td class="kanan"><b><?= number_format((float) ($total_kredit ?? 0), 2, ',', '.'); ?></b></td>
+            <!--<td class="kanan"><b><?= number_format((float) ($total_akhir_debet ?? 0), 2, ',', '.'); ?></b></td>-->
+            <!--<td class="kanan"><b><?= number_format((float) ($total_akhir_kredit ?? 0), 2, ',', '.'); ?></b></td>-->
+            <td class="kanan"><b><?= number_format((float) ($total_awal_debet-($total_debet * $modifier_debet)), 2, ',', '.'); ?></b></td>
+            <td class="kanan"><b><?= number_format((float) ($total_awal_kredit-($total_kredit * $modifier_kredit)), 2, ',', '.'); ?></b></td>
         </tr>
     </tbody>
 </table>

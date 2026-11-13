@@ -55,7 +55,7 @@
                                             <td class="text-center"><?= $uang_masuk['kode'] ?></td>
                                             <td><?= $uang_masuk['nama'] ?></td>
                                             <td><?= $uang_masuk['uraian'] ?></td>
-                                            <td class="text-right"><?= number_format($uang_masuk['jumlah'], 2, ',', '.'); ?></td>
+                                            <td class="text-right"><?= number_format((float) ($uang_masuk['jumlah'] ?? 0), 2, ',', '.'); ?></td>
                                             <td class="text-center"><?= $uang_masuk['action'] ?></td>
                                         </tr>
                                     <?php

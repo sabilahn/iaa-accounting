@@ -114,9 +114,9 @@
                                     <tr>
                                         <td class="text-center"><?= $jurnal['kode'] ?></td>
                                         <td><?= $jurnal['nama'] ?></td>
-                                        <td class="text-right"><?= number_format($jurnal['debet'], 2, ',', '.'); ?></td>
+                                        <td class="text-right"><?= number_format((float) ($jurnal['debet'] ?? 0), 2, ',', '.'); ?></td>
                                         <!-- <td class="text-center"><button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#editModalDebet<?= $jurnal['id'] ?>"><i class=" fas fa-pencil-alt"></i></button></td> -->
-                                        <td class="text-right"><?= number_format($jurnal['kredit'], 2, ',', '.'); ?></td>
+                                        <td class="text-right"><?= number_format((float) ($jurnal['kredit'] ?? 0), 2, ',', '.'); ?></td>
                                         <!-- <td class="text-center"><button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#editModalKredit<?= $jurnal['id'] ?>"><i class="fas fa-pencil-alt"></i></button></td> -->
                                     </tr>
                                 <?php
@@ -135,12 +135,12 @@
                     <tr>
                         <td><b>Jumlah Perkiraan Debet</b></td>
                         <td><b>:</b></td>
-                        <td class="text-right"><b><?= number_format($jml_debet, 2, ',', '.'); ?></b></td>
+                        <td class="text-right"><b><?= number_format((float) ($jml_debet ?? 0), 2, ',', '.'); ?></b></td>
                     </tr>
                     <tr>
                         <td><b>Jumlah Perkiraan Kredit</b></td>
                         <td><b>:</b></td>
-                        <td class="text-right"><b><?= number_format($jml_kredit, 2, ',', '.'); ?></b></td>
+                        <td class="text-right"><b><?= number_format((float) ($jml_kredit ?? 0), 2, ',', '.'); ?></b></td>
                     </tr>
                 </table>
             </div>

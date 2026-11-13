@@ -99,7 +99,7 @@
                                         <tr>
                                             <td class="text-center"><?= $rugi_laba['kode'] ?></td>
                                             <td><?= $rugi_laba['nama'] ?></td>
-                                            <td class="text-right"><?= number_format($rugi_laba['jml_kredit'], 2, ',', '.'); ?></td>
+                                            <td class="text-right"><?= number_format((float) ($rugi_laba['jml_kredit'] ?? 0), 2, ',', '.'); ?></td>
                                             <td></td>
                                         </tr>
                                     <?php } else {
@@ -107,7 +107,7 @@
                                         <tr>
                                             <td class="text-center"><?= $rugi_laba['kode'] ?></td>
                                             <td><?= $rugi_laba['nama'] ?></td>
-                                            <td class="text-right"><?= number_format($rugi_laba['jml_debet'], 2, ',', '.'); ?></td>
+                                            <td class="text-right"><?= number_format((float) ($rugi_laba['jml_debet'] ?? 0), 2, ',', '.'); ?></td>
                                             <td></td>
                                         </tr>
                                 <?php }
@@ -132,22 +132,22 @@
                             <tr>
                                 <td><b>Laba Usaha Sebelum Pajak</b></td>
                                 <td><b>:</b></td>
-                                <td class="text-right"><b><?= number_format($laba_blm_pajak, 2, ',', '.'); ?></b></td>
+                                <td class="text-right"><b><?= number_format((float) ($laba_blm_pajak ?? 0), 2, ',', '.'); ?></b></td>
                             </tr>
                             <tr>
                                 <td><b>Pajak</b></td>
                                 <td><b>:</b></td>
-                                <td class="text-right"><b><?= number_format($pajak, 2, ',', '.'); ?></b></td>
+                                <td class="text-right"><b><?= number_format((float) ($pajak ?? 0), 2, ',', '.'); ?></b></td>
                             </tr>
                             <tr>
                                 <td><b>Laba Usaha Sesudah Pajak</b></td>
                                 <td><b>:</b></td>
-                                <td class="text-right"><b><?= number_format($laba_sdh_pajak, 2, ',', '.'); ?></b></td>
+                                <td class="text-right"><b><?= number_format((float) ($laba_sdh_pajak ?? 0), 2, ',', '.'); ?></b></td>
                             </tr>
                             <tr>
                                 <td><b>Laba Bersih</b></td>
                                 <td><b>:</b></td>
-                                <td class="text-right"><b><?= number_format($laba_sdh_pajak, 2, ',', '.'); ?></b></td>
+                                <td class="text-right"><b><?= number_format((float) ($laba_sdh_pajak ?? 0), 2, ',', '.'); ?></b></td>
                             </tr>
                         <?php
                         }

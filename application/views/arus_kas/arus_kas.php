@@ -121,7 +121,7 @@
                                         <tr>
                                             <td class="text-center"><?= $kas_masuk['kode'] ?></td>
                                             <td><?= $kas_masuk['nama'] ?></td>
-                                            <td class="text-right"><?= number_format($kas_masuk['penerimaan'], 2, ',', '.'); ?></td>
+                                            <td class="text-right"><?= number_format((float) ($kas_masuk['penerimaan'] ?? 0), 2, ',', '.'); ?></td>
                                             <td></td>
                                         </tr>
                                 <?php }
@@ -161,7 +161,7 @@
                                         <tr>
                                             <td class="text-center"><?= $kas_keluar['kode'] ?></td>
                                             <td><?= $kas_keluar['nama'] ?></td>
-                                            <td class="text-right"><?= number_format($kas_keluar['pengeluaran'], 2, ',', '.'); ?></td>
+                                            <td class="text-right"><?= number_format((float) ($kas_keluar['pengeluaran'] ?? 0), 2, ',', '.'); ?></td>
                                             <td></td>
                                         </tr>
                                 <?php }
@@ -191,29 +191,29 @@
                         <tr>
                             <td><b>Jumlah Penerimaan Bulan Ini</b></td>
                             <td><b>:</b></td>
-                            <td class="kanan"><b><?= number_format($jml_masuk, 2, ',', '.');
+                            <td class="kanan"><b><?= number_format((float) ($jml_masuk ?? 0), 2, ',', '.');
                                                     ?></b></td>
                         </tr>
                         <tr>
                             <td><b>Jumlah Pengeluaran Bulan Ini</b></td>
                             <td><b>:</b></td>
-                            <td class="kanan"><b><?= number_format($jml_keluar, 2, ',', '.');
+                            <td class="kanan"><b><?= number_format((float) ($jml_keluar ?? 0), 2, ',', '.');
                                                     ?></b></td>
                         </tr>
                         <tr>
                             <td><b>Defisit/Surplus (Saldo Sementara)</b></td>
                             <td><b>:</b></td>
-                            <td class="kanan"><b><?= number_format($defisit, 2, ',', '.'); ?></b></td>
+                            <td class="kanan"><b><?= number_format((float) ($defisit ?? 0), 2, ',', '.'); ?></b></td>
                         </tr>
                         <tr>
                             <td><b>Saldo Awal Bulan</b></td>
                             <td><b>:</b></td>
-                            <td class="kanan"><b><?= number_format($saldo_awal, 2, ',', '.'); ?></b></td>
+                            <td class="kanan"><b><?= number_format((float) ($saldo_awal ?? 0), 2, ',', '.'); ?></b></td>
                         </tr>
                         <tr>
                             <td><b>Saldo Akhir Bulan</b></td>
                             <td><b>:</b></td>
-                            <td class="kanan"><b><?= number_format($saldo_akhir, 2, ',', '.'); ?></b></td>
+                            <td class="kanan"><b><?= number_format((float) ($saldo_akhir ?? 0), 2, ',', '.'); ?></b></td>
                         </tr>
                     <?php } ?>
                 </table>
