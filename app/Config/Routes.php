@@ -36,3 +36,41 @@ $routes->group('data_master', ['filter' => 'auth'], static function ($routes) {
     $routes->post('ubah_item', 'Data_master::ubah_item');
     $routes->post('hapus_item', 'Data_master::hapus_item');
 });
+
+// Rincian & Rangkuman
+$routes->group('rincian_dan_rangkuman', ['filter' => 'auth'], static function ($routes) {
+    $routes->get('/', 'Rincian_dan_rangkuman::index');
+    $routes->get('uang_masuk', 'Rincian_dan_rangkuman::uang_masuk');
+    $routes->post('tambah_uang_masuk', 'Rincian_dan_rangkuman::tambah_uang_masuk');
+    $routes->post('ubah_uang_masuk', 'Rincian_dan_rangkuman::ubah_uang_masuk');
+    $routes->post('hapus_uang_masuk', 'Rincian_dan_rangkuman::hapus_uang_masuk');
+    $routes->get('uang_keluar', 'Rincian_dan_rangkuman::uang_keluar');
+    $routes->post('tambah_uang_keluar', 'Rincian_dan_rangkuman::tambah_uang_keluar');
+    $routes->post('ubah_uang_keluar', 'Rincian_dan_rangkuman::ubah_uang_keluar');
+    $routes->post('hapus_uang_keluar', 'Rincian_dan_rangkuman::hapus_uang_keluar');
+});
+
+// Kas Harian
+$routes->group('kas_harian', ['filter' => 'auth'], static function ($routes) {
+    $routes->match(['get', 'post'], '/', 'Kas_harian::index');
+    $routes->get('cetak/(:segment)/(:segment)', 'Kas_harian::cetak/$1/$2');
+    $routes->get('konfersi/(:segment)/(:segment)', 'Kas_harian::konfersi/$1/$2');
+    $routes->get('export/(:segment)/(:segment)', 'Kas_harian::export/$1/$2');
+});
+
+// Laporan Kas
+$routes->group('laporan_kas', ['filter' => 'auth'], static function ($routes) {
+    $routes->match(['get', 'post'], '/', 'Laporan_kas::index');
+    $routes->get('cetak/(:segment)/(:segment)', 'Laporan_kas::cetak/$1/$2');
+    $routes->get('konfersi/(:segment)/(:segment)', 'Laporan_kas::konfersi/$1/$2');
+    $routes->get('export/(:segment)/(:segment)', 'Laporan_kas::export/$1/$2');
+});
+
+// Arus Kas
+$routes->group('arus_kas', ['filter' => 'auth'], static function ($routes) {
+    $routes->match(['get', 'post'], '/', 'Arus_kas::index');
+    $routes->get('cetak/(:segment)/(:segment)', 'Arus_kas::cetak/$1/$2');
+    $routes->get('konfersi/(:segment)/(:segment)', 'Arus_kas::konfersi/$1/$2');
+    $routes->get('export/(:segment)/(:segment)', 'Arus_kas::export/$1/$2');
+    $routes->get('simpan_jurnal/(:segment)/(:segment)', 'Arus_kas::simpan_jurnal/$1/$2');
+});
