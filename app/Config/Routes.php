@@ -74,3 +74,41 @@ $routes->group('arus_kas', ['filter' => 'auth'], static function ($routes) {
     $routes->get('export/(:segment)/(:segment)', 'Arus_kas::export/$1/$2');
     $routes->get('simpan_jurnal/(:segment)/(:segment)', 'Arus_kas::simpan_jurnal/$1/$2');
 });
+
+// Jurnal Memorial
+$routes->group('jurnal_memorial', ['filter' => 'auth'], static function ($routes) {
+    $routes->match(['get', 'post'], '/', 'Jurnal_memorial::index');
+    $routes->post('ubah_debet', 'Jurnal_memorial::ubah_debet');
+    $routes->post('ubah_kredit', 'Jurnal_memorial::ubah_kredit');
+    $routes->get('cetak/(:segment)/(:segment)', 'Jurnal_memorial::cetak/$1/$2');
+    $routes->get('konfersi/(:segment)/(:segment)', 'Jurnal_memorial::konfersi/$1/$2');
+    $routes->get('export/(:segment)/(:segment)', 'Jurnal_memorial::export/$1/$2');
+});
+
+// Neraca
+$routes->group('neraca', ['filter' => 'auth'], static function ($routes) {
+    $routes->get('/', 'Neraca::index');
+    $routes->match(['get', 'post'], 'neraca_mutasi', 'Neraca::neraca_mutasi');
+    $routes->match(['get', 'post'], 'neraca_penyesuaian', 'Neraca::neraca_penyesuaian');
+    $routes->match(['get', 'post'], 'neraca_saldo', 'Neraca::neraca_saldo');
+    $routes->get('cetak_mutasi/(:segment)/(:segment)', 'Neraca::cetak_mutasi/$1/$2');
+    $routes->get('cetak_penyesuaian/(:segment)/(:segment)', 'Neraca::cetak_penyesuaian/$1/$2');
+    $routes->get('cetak_saldo/(:segment)/(:segment)', 'Neraca::cetak_saldo/$1/$2');
+    $routes->get('konfersi_mutasi/(:segment)/(:segment)', 'Neraca::konfersi_mutasi/$1/$2');
+    $routes->get('konfersi_penyesuaian/(:segment)/(:segment)', 'Neraca::konfersi_penyesuaian/$1/$2');
+    $routes->get('konfersi_saldo/(:segment)/(:segment)', 'Neraca::konfersi_saldo/$1/$2');
+    $routes->get('export_mutasi/(:segment)/(:segment)', 'Neraca::export_mutasi/$1/$2');
+    $routes->get('export_penyesuaian/(:segment)/(:segment)', 'Neraca::export_penyesuaian/$1/$2');
+    $routes->get('export_saldo/(:segment)/(:segment)', 'Neraca::export_saldo/$1/$2');
+    $routes->get('simpan_saldo/(:segment)/(:segment)', 'Neraca::simpan_saldo/$1/$2');
+    $routes->post('update_penyesuaian', 'Neraca::update_penyesuaian');
+    $routes->post('update_saldo', 'Neraca::update_saldo');
+});
+
+// Rugi Laba
+$routes->group('rugi_laba', ['filter' => 'auth'], static function ($routes) {
+    $routes->match(['get', 'post'], '/', 'Rugi_laba::index');
+    $routes->get('cetak/(:segment)/(:segment)', 'Rugi_laba::cetak/$1/$2');
+    $routes->get('konfersi/(:segment)/(:segment)', 'Rugi_laba::konfersi/$1/$2');
+    $routes->get('export/(:segment)/(:segment)', 'Rugi_laba::export/$1/$2');
+});
