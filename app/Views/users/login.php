@@ -108,6 +108,15 @@
   <!-- Template JS File -->
   <script src="<?= base_url('assets/stisla/build/js/scripts.js') ?>"></script>
   <script src="<?= base_url('assets/stisla/build/js/custom.js') ?>"></script>
+  <script>
+    $(function() {
+      setTimeout(function() {
+        $('.alert.alert-dismissible').fadeOut(400, function() {
+          $(this).alert('close');
+        });
+      }, 3000);
+    });
+  </script>
 </body>
 
 </html>

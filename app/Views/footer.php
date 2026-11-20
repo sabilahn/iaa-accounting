@@ -50,6 +50,15 @@
 <script src="<?= base_url('assets/stisla/vendors/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js') ?>"></script>
 <script src="<?= base_url('assets/stisla/vendors/select2/dist/js/select2.full.min.js') ?>"></script>
 <script src="<?= base_url('assets/stisla/vendors/jquery-selectric/jquery.selectric.min.js') ?>"></script>
+<script>
+    $(function() {
+        setTimeout(function() {
+            $('.alert.alert-dismissible').fadeOut(400, function() {
+                $(this).alert('close');
+            });
+        }, 3000);
+    });
+</script>
 </body>
 
 </html>
