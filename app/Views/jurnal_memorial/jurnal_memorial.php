@@ -170,7 +170,7 @@ foreach ($data_jurnal as $jurnal) :
                             <input type="hidden" id="id_debet_edt" name="id_debet_edt" value="<?= $jurnal['id'] ?>">
                             <div class="form-group mb-0">
                                 <label>Jumlah</label>
-                                <input type="number" name="jml_debet_edt" id="jml_debet_edt" class="form-control" value="<?= $jurnal['debet'] ?>" required>
+                                <input type="text" inputmode="numeric" name="jml_debet_edt" id="jml_debet_edt" class="form-control currency-input" value="<?= number_format((float) ($jurnal['debet'] ?? 0), 0, ',', '.') ?>" required>
                             </div>
                             <div class="modal-footer bg-whitesmoke br">
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
@@ -205,7 +205,7 @@ foreach ($data_jurnal as $jurnal) :
                             <input type="hidden" id="id_kredit_edt" name="id_kredit_edt" value="<?= $jurnal['id'] ?>">
                             <div class="form-group mb-0">
                                 <label>Jumlah</label>
-                                <input type="number" name="jml_kredit_edt" id="jml_kredit_edt" class="form-control" value="<?= $jurnal['kredit'] ?>" required>
+                                <input type="text" inputmode="numeric" name="jml_kredit_edt" id="jml_kredit_edt" class="form-control currency-input" value="<?= number_format((float) ($jurnal['kredit'] ?? 0), 0, ',', '.') ?>" required>
                             </div>
                             <div class="modal-footer bg-whitesmoke br">
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>

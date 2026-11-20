@@ -57,6 +57,33 @@
                 $(this).alert('close');
             });
         }, 3000);
+
+        function formatRibuan(value) {
+            var raw = String(value).replace(/\D/g, '');
+            if (!raw) {
+                return '';
+            }
+            if (raw.length > 1) {
+                raw = raw.replace(/^0+/, '') || '0';
+            }
+            return raw.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+        }
+
+        $('.currency-input').each(function() {
+            if ($(this).val() !== '') {
+                $(this).val(formatRibuan($(this).val()));
+            }
+        });
+
+        $(document).on('input', '.currency-input', function() {
+            $(this).val(formatRibuan(this.value));
+        });
+
+        $(document).on('submit', 'form', function() {
+            $(this).find('.currency-input').each(function() {
+                $(this).val($(this).val().replace(/\./g, ''));
+            });
+        });
     });
 </script>
 </body>

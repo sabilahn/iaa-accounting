@@ -324,8 +324,8 @@ class Neraca extends BaseController
 
     public function update_penyesuaian()
     {
-        $debet  = $this->request->getPost('jml_debet');
-        $kredit = $this->request->getPost('jml_kredit');
+        $debet  = str_replace('.', '', (string) $this->request->getPost('jml_debet'));
+        $kredit = str_replace('.', '', (string) $this->request->getPost('jml_kredit'));
         $kode   = $this->request->getPost('kode');
         $bulan  = $this->request->getPost('bulan');
         $tahun  = $this->request->getPost('tahun');

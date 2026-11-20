@@ -206,11 +206,11 @@ foreach ($neraca_penyesuaian as $penyesuaian) :
                             <input type="hidden" id="tahun" name="tahun" value="<?= $tahun ?>">
                             <div class="form-group mb-0">
                                 <label>Debet</label>
-                                <input type="number" name="jml_debet" id="jml_debet" class="form-control" value="<?= $debet ?>" required>
+                                <input type="text" inputmode="numeric" name="jml_debet" id="jml_debet" class="form-control currency-input" value="<?= number_format((float) ($debet ?? 0), 0, ',', '.') ?>" required>
                             </div>
                             <div class="form-group mb-0">
                                 <label>Kredit</label>
-                                <input type="number" name="jml_kredit" id="jml_kredit" class="form-control" value="<?= $kredit ?>" required>
+                                <input type="text" inputmode="numeric" name="jml_kredit" id="jml_kredit" class="form-control currency-input" value="<?= number_format((float) ($kredit ?? 0), 0, ',', '.') ?>" required>
                             </div>
                             <div class="modal-footer bg-whitesmoke br">
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>

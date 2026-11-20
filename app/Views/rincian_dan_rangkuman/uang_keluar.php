@@ -104,7 +104,7 @@
                         </div>
                         <div class="form-group mb-0">
                             <label>Jumlah</label>
-                            <input type="number" name="jml_keluar" id="jml_keluar" class="form-control" required>
+                            <input type="text" inputmode="numeric" name="jml_keluar" id="jml_keluar" class="form-control currency-input" required>
                         </div>
                         <div class="modal-footer bg-whitesmoke br">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
@@ -145,7 +145,7 @@ foreach ($data_uang_keluar as $uang_keluar) :
                             </div>
                             <div class="form-group mb-0">
                                 <label>Jumlah</label>
-                                <input type="number" name="jml_keluar_edt" id="jml_keluar_edt" class="form-control" value="<?= $uang_keluar['jumlah'] ?>" required>
+                                <input type="text" inputmode="numeric" name="jml_keluar_edt" id="jml_keluar_edt" class="form-control currency-input" value="<?= number_format((float) ($uang_keluar['jumlah'] ?? 0), 0, ',', '.') ?>" required>
                             </div>
                             <div class="modal-footer bg-whitesmoke br">
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>

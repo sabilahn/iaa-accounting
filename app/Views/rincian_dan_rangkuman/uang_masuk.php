@@ -105,7 +105,7 @@
                         </div>
                         <div class="form-group mb-0">
                             <label>Jumlah</label>
-                            <input type="number" name="jml_masuk" id="jml_masuk" class="form-control" required>
+                            <input type="text" inputmode="numeric" name="jml_masuk" id="jml_masuk" class="form-control currency-input" required>
                         </div>
                         <div class="modal-footer bg-whitesmoke br">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
@@ -146,7 +146,7 @@ foreach ($data_uang_masuk as $uang_masuk) :
                             </div>
                             <div class="form-group mb-0">
                                 <label>Jumlah</label>
-                                <input type="number" name="jml_masuk_edt" id="jml_masuk_edt" class="form-control" value="<?= $uang_masuk['jumlah'] ?>" required>
+                                <input type="text" inputmode="numeric" name="jml_masuk_edt" id="jml_masuk_edt" class="form-control currency-input" value="<?= number_format((float) ($uang_masuk['jumlah'] ?? 0), 0, ',', '.') ?>" required>
                             </div>
                             <div class="modal-footer bg-whitesmoke br">
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>

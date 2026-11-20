@@ -68,7 +68,7 @@ class Jurnal_memorial extends BaseController
 
         try {
             $data = [
-                'debet'      => $this->request->getPost('jml_debet_edt'),
+                'debet'      => str_replace('.', '', (string) $this->request->getPost('jml_debet_edt')),
                 'updated_at' => date('Y-m-d H:i:s'),
                 'updated_by' => session()->get('user_id'),
             ];
@@ -104,7 +104,7 @@ class Jurnal_memorial extends BaseController
 
         try {
             $data = [
-                'kredit'     => $this->request->getPost('jml_kredit_edt'),
+                'kredit'     => str_replace('.', '', (string) $this->request->getPost('jml_kredit_edt')),
                 'updated_at' => date('Y-m-d H:i:s'),
                 'updated_by' => session()->get('user_id'),
             ];

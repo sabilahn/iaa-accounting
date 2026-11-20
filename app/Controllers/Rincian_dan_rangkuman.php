@@ -49,7 +49,7 @@ class Rincian_dan_rangkuman extends BaseController
                 'kode_akun'  => $this->request->getPost('kode_masuk'),
                 'tanggal'    => $this->request->getPost('tgl_masuk'),
                 'uraian'     => $this->request->getPost('uraian_masuk'),
-                'jumlah'     => $this->request->getPost('jml_masuk'),
+                'jumlah'     => str_replace('.', '', (string) $this->request->getPost('jml_masuk')),
                 'created_at' => date('Y-m-d H:i:s'),
                 'created_by' => session()->get('user_id'),
             ];
@@ -87,7 +87,7 @@ class Rincian_dan_rangkuman extends BaseController
             $data = [
                 'tanggal'    => $this->request->getPost('tgl_masuk_edt'),
                 'uraian'     => $this->request->getPost('uraian_masuk_edt'),
-                'jumlah'     => $this->request->getPost('jml_masuk_edt'),
+                'jumlah'     => str_replace('.', '', (string) $this->request->getPost('jml_masuk_edt')),
                 'updated_at' => date('Y-m-d H:i:s'),
                 'updated_by' => session()->get('user_id'),
             ];
@@ -159,7 +159,7 @@ class Rincian_dan_rangkuman extends BaseController
                 'kode_akun'  => $this->request->getPost('kode_keluar'),
                 'tanggal'    => $this->request->getPost('tgl_keluar'),
                 'uraian'     => $this->request->getPost('uraian_keluar'),
-                'jumlah'     => $this->request->getPost('jml_keluar'),
+                'jumlah'     => str_replace('.', '', (string) $this->request->getPost('jml_keluar')),
                 'created_at' => date('Y-m-d H:i:s'),
                 'created_by' => session()->get('user_id'),
             ];
@@ -197,7 +197,7 @@ class Rincian_dan_rangkuman extends BaseController
             $data = [
                 'tanggal'    => $this->request->getPost('tgl_keluar_edt'),
                 'uraian'     => $this->request->getPost('uraian_keluar_edt'),
-                'jumlah'     => $this->request->getPost('jml_keluar_edt'),
+                'jumlah'     => str_replace('.', '', (string) $this->request->getPost('jml_keluar_edt')),
                 'updated_at' => date('Y-m-d H:i:s'),
                 'updated_by' => session()->get('user_id'),
             ];
