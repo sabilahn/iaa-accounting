@@ -11,25 +11,23 @@ body{
 }
 
 .btn {
-    background-color:#D2D3D5;
+    background-color: #D2D3D5;
     border: none;
     border-radius: 5px;
     color: black;
     text-align: center;
     font-size: 15px;
-    margin: 4px 2px;
+    margin: 20px 2px 4px 10px;
     opacity: 0.8;
     transition: 0.3s;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
     cursor: pointer;
-
-    width: 150px;
-    height: 30px;
-    /* color: blueviolet; */
-    padding-top: 12px;
-    margin-left: 10px;
-    margin-top: 20px;
+    min-width: 150px;
+    height: 38px;
+    padding: 0 14px;
     position: relative;
 }
 

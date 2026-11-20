@@ -45,26 +45,8 @@ class Neraca extends BaseController
         return redirect()->to(base_url('neraca/neraca_mutasi'));
     }
 
-    private function resolveSessionPeriod(): array
+    private function resolvePeriod(): array
     {
-        $postBulan = $this->request->getPost('bulan');
-        $postTahun = $this->request->getPost('tahun');
-
-        if (! empty($postBulan) && ! empty($postTahun)) {
-            session()->set('bulan', $postBulan);
-            session()->set('tahun', $postTahun);
-        }
-
-        $bulan = session()->get('bulan') ?? (int) date('m');
-        $tahun = session()->get('tahun') ?? date('Y');
-
-        return [$bulan, $tahun];
-    }
-
-    public function neraca_mutasi()
-    {
-        $data['title'] = 'Neraca Mutasi';
-
         $bulan = $this->request->getPost('bulan');
         $tahun = $this->request->getPost('tahun');
 
@@ -72,6 +54,14 @@ class Neraca extends BaseController
             $bulan = (int) date('m');
             $tahun = date('Y');
         }
+
+        return [$bulan, $tahun];
+    }
+
+    public function neraca_mutasi()
+    {
+        $data['title'] = 'Neraca Mutasi';
+        [$bulan, $tahun] = $this->resolvePeriod();
 
         $data['nama_bulan']    = $this->getNamaBulan($bulan);
         $data['bulan']         = $bulan;
@@ -88,7 +78,7 @@ class Neraca extends BaseController
     public function neraca_penyesuaian()
     {
         $data['title'] = 'Neraca Penyesuaian';
-        [$bulan, $tahun] = $this->resolveSessionPeriod();
+        [$bulan, $tahun] = $this->resolvePeriod();
 
         $data['nama_bulan']         = $this->getNamaBulan($bulan);
         $data['neraca_penyesuaian'] = $this->neracaModel->data_penyesuaian($bulan, $tahun);
@@ -106,7 +96,7 @@ class Neraca extends BaseController
     public function neraca_saldo()
     {
         $data['title'] = 'Neraca Saldo';
-        [$bulan, $tahun] = $this->resolveSessionPeriod();
+        [$bulan, $tahun] = $this->resolvePeriod();
 
         $data['nama_bulan']   = $this->getNamaBulan($bulan);
         $data['neraca_saldo'] = $this->neracaModel->data_saldo_($bulan, $tahun);
