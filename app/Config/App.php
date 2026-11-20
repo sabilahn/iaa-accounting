@@ -23,7 +23,10 @@ class App extends BaseConfig
         parent::__construct();
 
         if (! empty($_SERVER['HTTP_HOST'])) {
-            $scheme     = (! empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') ? 'https' : 'http';
+            $isHttps = (! empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+                || (($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https')
+                || (($_SERVER['SERVER_PORT'] ?? null) == 443);
+            $scheme     = $isHttps ? 'https' : 'http';
             $scriptDir  = str_replace(basename($_SERVER['SCRIPT_NAME'] ?? ''), '', $_SERVER['SCRIPT_NAME'] ?? '/');
             $requestUri = $_SERVER['REQUEST_URI'] ?? '/';
 
